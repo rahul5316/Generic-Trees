@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class main {
+public class Main {
   private static class Node {
     int data;
     ArrayList<Node> children = new ArrayList<>();
@@ -80,14 +80,33 @@ public class main {
   }
 
   public static void traversals(Node node){
-    System.out.println("Node Pre " + node.data + "--" + node.data);
-    
-    for(Node child:node.children) {
+    System.out.println("Node Pre " + node.data);
+
+    for(Node child: node.children){
       System.out.println("Edge Pre " + node.data + "--" + child.data);
       traversals(child);
       System.out.println("Edge Post " + node.data + "--" + child.data);
     }
+
     System.out.println("Node Post " + node.data);
+  }
+
+  public static void levelOrder(Node node){
+    // write your code here
+        
+    Queue<Node> queue = new ArrayDeque<>();
+        queue.add(node);
+
+
+        while(queue.size()>0){
+          node = queue.remove();
+
+          System.out.print(node.data+" ");
+    for(Node child:node.children) {
+      queue.add(child);
+    }
+  }
+  System.out.println(".");
   }
 
   public static void main(String[] args) throws Exception {
@@ -100,7 +119,7 @@ public class main {
     }
 
     Node root = construct(arr);
-    traversals(root);
+    levelOrder(root);
   }
 
 }
