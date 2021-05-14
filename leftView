@@ -1,0 +1,48 @@
+public class levelOrder{
+
+
+
+}
+
+
+
+public ArrayList<Integer> leftView(TreeNode node) {
+
+
+if(root == null) {
+  return null;
+}
+
+
+ArrayList<Integer> arr = new ArrayList<>();
+LinkedList<Integer> list = new LinkedList<>();
+
+
+list.addLast(root);
+
+while(list.size()!=0) {
+
+int size = list.size();
+
+ans.add(list.getFirst().val)
+
+while(size >0) {
+
+  TreeNode rn = list.removeFirst();
+
+       if(rn.left != null)
+       list.addLast(rn.left);
+
+       if(rn.right != null)
+       list.addLast(rn.left);
+}
+
+
+
+
+}
+
+     
+return arr;
+
+}
